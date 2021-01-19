@@ -1,14 +1,22 @@
 <template>
-<div>
-  <div v-for="(thread, index) in threads" :key="index" class="col-large push-top">
+  <div class="col-large push-top">
     <h1>{{ thread.title }}</h1>
     <div class="post-list">
-      <div v-for="(postId, postIndex) in thread.posts" :key="postIndex" class="post">
-
+      <div
+        v-for="(postId, postIndex) in thread.posts"
+        :key="postIndex"
+        class="post"
+      >
         <div class="user-info">
-          <a href="#" class="user-name">{{ users[posts[postId].userId].name }}</a>
+          <a href="#" class="user-name">{{
+            users[posts[postId].userId].name
+          }}</a>
           <a href="#">
-            <img :src="users[posts[postId].userId].avatar" alt="" class="avatar-large">
+            <img
+              :src="users[posts[postId].userId].avatar"
+              alt=""
+              class="avatar-large"
+            />
           </a>
           <p class="desktop-only text-small">107 posts</p>
         </div>
@@ -25,19 +33,20 @@
       </div>
     </div>
   </div>
-</div>
 </template>
 
 <script>
 import sourceData from '@/data'
 export default {
-  name: 'HelloWorld',
   props: {
-    msg: String
+    id: {
+      required: true,
+      type: String
+    }
   },
   data () {
     return {
-      threads: sourceData.threads,
+      thread: sourceData.threads[this.id],
       posts: sourceData.posts,
       users: sourceData.users
     }
