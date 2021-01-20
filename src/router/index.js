@@ -38,6 +38,12 @@ const routes = [
     props: true
   },
   {
+    path: '/me/edit',
+    name: 'ProfileEdit',
+    component: () => import(/* webpackChunkName: "profile" */ '../views/PageProfile.vue'),
+    props: { edit: true }
+  },
+  {
     path: '*',
     name: 'NotFound',
     component: () => import(/* webpackChunkName: "notfound" */ '../views/PageNotFound.vue')
