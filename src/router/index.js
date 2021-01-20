@@ -11,18 +11,24 @@ const routes = [
     component: PageHome
   },
   {
+    path: '/forum/:id',
+    name: 'Forum',
+    component: () => import(/* webpackChunkName: "forum" */ '../views/PageForum.vue'),
+    props: true
+  },
+  {
     path: '/thread/:id',
     name: 'ThreadShow',
     // route level code-splitting
     // this generates a separate chunk (about.[hash].js) for this route
     // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/PageThreadShow.vue'),
+    component: () => import(/* webpackChunkName: "hreadshow" */ '../views/PageThreadShow.vue'),
     props: true
   },
   {
     path: '*',
     name: 'NotFound',
-    component: () => import(/* webpackChunkName: "about" */ '../views/PageNotFound.vue')
+    component: () => import(/* webpackChunkName: "notfound" */ '../views/PageNotFound.vue')
   }
 ]
 
