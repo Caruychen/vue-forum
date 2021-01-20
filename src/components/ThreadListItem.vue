@@ -14,7 +14,7 @@
       </p>
       <p class="text-faded text-xsmall">
         By <a href="#">{{ user.name }}</a
-        >, {{ thread.publishedAt }}
+        >, <AppDate :timeStamp="thread.publishedAt" />.
       </p>
     </div>
     <div class="activity">
