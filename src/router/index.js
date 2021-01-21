@@ -38,6 +38,12 @@ const routes = [
     props: true
   },
   {
+    path: '/thread/:id/edit',
+    name: 'ThreadEdit',
+    component: () => import(/* webpackChunkName: "threadedit" */ '../views/PageThreadEdit.vue'),
+    props: true
+  },
+  {
     path: '/me',
     name: 'Profile',
     component: () => import(/* webpackChunkName: "profile" */ '../views/PageProfile.vue'),
