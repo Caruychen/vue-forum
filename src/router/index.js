@@ -23,7 +23,7 @@ const routes = [
     props: true
   },
   {
-    path: '/thread/create',
+    path: '/thread/create/:forumId',
     name: 'ThreadCreate',
     component: () => import(/* webpackChunkName: "threadcreate" */ '../views/PageThreadCreate.vue'),
     props: true
