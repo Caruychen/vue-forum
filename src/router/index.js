@@ -23,6 +23,12 @@ const routes = [
     props: true
   },
   {
+    path: '/thread/create',
+    name: 'ThreadCreate',
+    component: () => import(/* webpackChunkName: "threadcreate" */ '../views/PageThreadCreate.vue'),
+    props: true
+  },
+  {
     path: '/thread/:id',
     name: 'ThreadShow',
     // route level code-splitting
